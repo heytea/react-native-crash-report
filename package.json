@@ -2,7 +2,7 @@
   "name": "@heytea/react-native-crash-report",
   "title": "React Native Crash Report",
   "version": "1.0.1",
-  "description": "TODO",
+  "description": "将ReactNative JS层和原生层的错误信息上报到七牛云",
   "main": "index.js",
   "files": [
     "README.md",
@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-crash-report.git",
-    "baseUrl": "https://github.com/github_account/react-native-crash-report"
+    "url": "git+https://github.com/heytea/react-native-crash-report.git",
+    "baseUrl": "https://github.com/heytea/react-native-crash-report"
   },
   "keywords": [
     "react-native"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "heytea",
+    "email": "bfe@heytea.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",

@@ -62,8 +62,6 @@ public class Logger {
                         crashDao.updateCrashEntities(crashEntity);
                     } catch (IOException e) {
                         e.printStackTrace();
-                        crashEntity.setUploaded(false);
-                        crashDao.updateCrashEntities(crashEntity);
                     }
                 }
             }
