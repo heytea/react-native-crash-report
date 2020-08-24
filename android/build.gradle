@@ -73,6 +73,11 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
+    // Room
+    implementation "android.arch.persistence.room:runtime:2.1.0-alpha06"
+    annotationProcessor "android.arch.persistence.room:compiler:2.1.0-alpha06"
+    // okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
 }
 
 def configureReactNativePom(def pom) {

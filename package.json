@@ -1,7 +1,7 @@
 {
   "name": "@heytea/react-native-crash-report",
   "title": "React Native Crash Report",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TODO",
   "main": "index.js",
   "files": [

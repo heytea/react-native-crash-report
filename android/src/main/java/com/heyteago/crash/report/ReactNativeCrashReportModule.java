@@ -1,11 +1,12 @@
 package com.heyteago.crash.report;
 
+import android.util.Log;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
 
-public class ReactNativeCrashReportModule extends ReactContextBaseJavaModule {
+public class ReactNativeCrashReportModule extends ReactContextBaseJavaModule implements Thread.UncaughtExceptionHandler {
 
     private final ReactApplicationContext reactContext;
 
@@ -20,8 +21,25 @@ public class ReactNativeCrashReportModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-        // TODO: Implement some actually useful functionality
-        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
+    public void init(String qiniuUrl, String auth) {
+        Logger.init(this.reactContext, qiniuUrl, auth);
+        Thread.setDefaultUncaughtExceptionHandler(this);
+        Logger.uploadLog();
+    }
+
+    @ReactMethod
+    public void reportLog(String log) {
+        Logger.saveLog(log);
+    }
+
+    @ReactMethod
+    public void testCrash() {
+        throw new RuntimeException("this is test crash");
+    }
+
+    @Override
+    public void uncaughtException(Thread thread, Throwable throwable) {
+        String stackTraceString = Log.getStackTraceString(throwable);
+        Logger.saveLog(stackTraceString);
     }
 }

@@ -1,17 +1,22 @@
-# react-native-crash-report
+# @heytea/react-native-crash-report
 
 ## Getting started
 
-`$ npm install react-native-crash-report --save`
+`$ npm install @heytea/react-native-crash-report --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-crash-report`
+`$ react-native link @heytea/react-native-crash-report`
 
 ## Usage
 ```javascript
-import ReactNativeCrashReport from 'react-native-crash-report';
+import ReactNativeCrashReport from '@heytea/react-native-crash-report';
 
-// TODO: What to do with the module?
-ReactNativeCrashReport;
+// 初始化
+// auth 为请求头中 Authorization 的值
+ReactNativeCrashReport.init(qiniuUrl: string, auth: string);
+// 上报日志
+ReactNativeCrashReport.reportLog(log: string);
+// 测试闪退
+ReactNativeCrashReport.testCrash();
 ```
