@@ -1,5 +1,5 @@
 {
-  "name": "react-native-crash-report",
+  "name": "@heytea/react-native-crash-report",
   "title": "React Native Crash Report",
   "version": "1.0.0",
   "description": "TODO",
@@ -8,6 +8,7 @@
     "README.md",
     "android",
     "index.js",
+    "index.d.ts",
     "ios",
     "react-native-crash-report.podspec"
   ],
